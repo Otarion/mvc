@@ -8,4 +8,4 @@
 
     # Redirige toutes les requêtes vers index.php (QSA = conserve les paramètres d'URL, L = Termine le processus de réécriture)
     RewriteRule ^(.*)$ index.php [QSA,L]
-</IfModule>ks
+</IfModule>
