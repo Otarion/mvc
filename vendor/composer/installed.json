@@ -3411,6 +3411,7 @@
         "symfony/process",
         "symfony/service-contracts",
         "symfony/stopwatch",
-        "symfony/string"
+        "symfony/string",
+        "symfony/var-dumper"
     ]
 }
