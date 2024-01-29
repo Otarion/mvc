@@ -1,6 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace MVC\app;
+namespace MVC;
+
+use Closure;
 
 class App
 {
@@ -22,4 +24,13 @@ class App
 
     // La méthode boot est vide par défaut
     public function boot() {}
+
+    //Propriété pour stocker les services
+    private $container = [];
+
+    //Méthode pour enregistrer des services en tant que singletons
+    public function singleton ($name, Closure $closure) {
+        $this->container[$name] = $closure($this);
+    }
+
 }

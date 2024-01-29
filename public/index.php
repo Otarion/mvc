@@ -6,7 +6,7 @@ echo "";
 require_once __DIR__ . '/../vendor/autoload.php';
 
 //Créer une nouvelle instance de la classe App
-use MVC\app\App;
+use MVC\App;
 $app = App::getInstance();
 
 //Appeler la méthode boot() de la classe App
