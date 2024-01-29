@@ -26,11 +26,30 @@ class App
     public function boot() {}
 
     //Propriété pour stocker les services
-    private $container = [];
+    public $container;
 
     //Méthode pour enregistrer des services en tant que singletons
-    public function singleton ($name, Closure $closure) {
-        $this->container[$name] = $closure($this);
+    public function singleton ($name, Closure $closure = null) {
+        //Si closure n'est pas fourni, assume que l'instance passe directement
+        if ($closure === null) {
+            $this -> container[$name] = $name;
+        } else {
+            $this -> container[$name] = $closure($this);
+        }
     }
 
+    //Méthode pour récupérer un service à partir du conteneur
+    public function make ($name){
+        if (isset($this -> container [$name])) {
+        //Si c'est closure, on l'appelle pour obtenir l'instance
+        if (is_callable($this -> container[$name])){
+            return $this -> container[$name]($this);
+        } else {
+            //Sinon, on retourne directement l'instance 
+            return $this -> container[$name];
+        }
+        } else {
+            //Retourner une erreur ou lancer une exception si le service n'est pas enregistrer
+    } throw new \Exception("Le service '$name' n'est pas enregisté.");
+    }
 }

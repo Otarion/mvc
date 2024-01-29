@@ -71,6 +71,7 @@ class ComposerStaticInit9cd95f96c0f26e6a0efa1731369f7da7
         ),
         'M' => 
         array (
+            'MonSuperService\\' => 16,
             'MVC\\' => 4,
         ),
         'I' => 
@@ -223,15 +224,19 @@ class ComposerStaticInit9cd95f96c0f26e6a0efa1731369f7da7
         array (
             0 => __DIR__ . '/..' . '/friendsofphp/php-cs-fixer/src',
         ),
+        'MonSuperService\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
+        ),
         'MVC\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),
         'Illuminate\\Support\\' => 
         array (
-            0 => __DIR__ . '/..' . '/illuminate/macroable',
+            0 => __DIR__ . '/..' . '/illuminate/collections',
             1 => __DIR__ . '/..' . '/illuminate/conditionable',
-            2 => __DIR__ . '/..' . '/illuminate/collections',
+            2 => __DIR__ . '/..' . '/illuminate/macroable',
             3 => __DIR__ . '/..' . '/illuminate/support',
         ),
         'Illuminate\\Database\\' => 
